@@ -28,11 +28,11 @@ services:
       dockerfile: Dockerfile
     container_name: gestnet-back
     ports:
-      - "3000:8000"
+      - "3000:3000"
     depends_on:
       postgres_local:
         condition: service_healthy
-    command: npm run dev
+    command: node server.js
     restart: unless-stopped
 
   #============================================================================================
@@ -47,7 +47,7 @@ services:
       - backend
     networks:
       - gest-net
-    command: npm run dev
+    command: npm run dev -- --host
     restart: unless-stopped
 
 networks:
