@@ -15,7 +15,7 @@ const Contrato = database.define(
       type: Sequelize.INTEGER,
       allowNull: false,
       references: {
-        model: "kitnets",
+        model: "kitnet",
         key: "id",
       },
     },
